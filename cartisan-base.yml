@@ -1,0 +1,25 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /base
+spring:
+  application:
+    name: cartisan-base
+  profiles:
+    include: common
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cartisan?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: truth
+  jpa:
+    database: MySQL
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
