@@ -6,7 +6,6 @@ spring:
   application:
     name: cartisan-base
   profiles:
-    active: dev
     include: common
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -18,9 +17,4 @@ spring:
     show-sql: true
   main:
     allow-bean-definition-overriding: true
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    prefer-ip-address: true
+
