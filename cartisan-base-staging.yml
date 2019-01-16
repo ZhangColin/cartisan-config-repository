@@ -1,15 +1,9 @@
-server:
-  port: 9002
-  servlet:
-    context-path: /base
 spring:
-  application:
-    name: cartisan-base
   profiles:
     include: common
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/cartisan?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://192.168.2.194:3306/cartisan?characterEncoding=utf-8&useSSL=false
     username: root
     password: truth
   jpa:
@@ -17,3 +11,40 @@ spring:
     show-sql: true
   main:
     allow-bean-definition-overriding: true
+
+  rabbitmq:
+    host: 192.168.2.194
+    port: 5672
+    username: guest
+    password: guest
+    
+  redis:
+    host: 192.168.2.194
+    port: 6379  
+    
+  zipkin:
+    base-url: http://zipkin:9411   # 指定zipkin的服务端的地址
+    sender:
+      type: web
+      
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+
+cartisan:
+  name: Cartisan
+  version: 1.1.0
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+feign:
+  hystrix:
+    enabled: true
