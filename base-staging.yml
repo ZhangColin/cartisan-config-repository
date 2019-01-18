@@ -8,21 +8,22 @@ spring:
 
   rabbitmq:
     host: 192.168.2.194
-    port: 25672
+    port: 5672
     username: guest
     password: guest
-    
+
   redis:
     host: 192.168.2.194
-    port: 26379  
-    
+    port: 6379
+
   zipkin:
     base-url: http://zipkin:9411   # 指定zipkin的服务端的地址
-      
+
   sleuth:
     sampler:
-      probability: 0.5 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
 
 cartisan:
   name: Cartisan
   version: 1.1.0
+
