@@ -1,5 +1,6 @@
 spring:
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.2.194:3306/cartisan-base?characterEncoding=utf-8&useSSL=false
     username: root
     password: truth
