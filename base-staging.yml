@@ -24,7 +24,10 @@ spring:
     sampler:
       probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
 
-cartisan:
-  name: Cartisan
-  version: 1.1.0
+logging:
+  file: cartisan-base
 
+cartisan:
+  signature:
+    enable: false
+    secret: cartisan
